@@ -8,7 +8,7 @@ $LOAD_PATH << "#{HERE}/../vendor/gen-rb"
 require "#{HERE}/../vendor/gen-rb/scribe"
 
 Object.const_set("ScribeThrift", Scribe)
-Object.const_remove("Scribe")
+Object.send(:remove_const, "Scribe")
 
 $LOAD_PATH << "#{HERE}"
 require 'scribe/scribe'
