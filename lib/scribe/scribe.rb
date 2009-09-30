@@ -1,5 +1,7 @@
 
 class Scribe
+  # Created a new client instance. Accepts an optional host, port, and default 
+  # category.
   def initialize(host = "127.0.0.1", port = 1463, category = "Ruby")
     @host = host
     @port = port
@@ -13,6 +15,7 @@ class Scribe
       transport)
   end
 
+  # Log a message. Accepts a string and an optional category.
   def log(message, category = @category)
     raise ArgumentError, "Message must be a string" unless message.is_a?(String)
     raise ArgumentError, "Category must be a string" unless category.is_a?(String)
@@ -21,6 +24,7 @@ class Scribe
     @batch ? @batch << entry : @client.Log(Array(entry))
   end
   
+  # Batch several calls to Scribe#log together. Yields to a block.
   def batch
     @batch = []
     yield
