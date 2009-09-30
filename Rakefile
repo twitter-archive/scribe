@@ -19,6 +19,7 @@ end
 
 desc "Start Scribe"
 task :scribe do
+  system("mkdir /tmp/scribetest/") unless File.exist?("/tmp/scribetest/")
   system("scribed -c #{File.expand_path(File.dirname(__FILE__))}/conf/scribe.conf &")
 end
 

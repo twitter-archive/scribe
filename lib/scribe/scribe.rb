@@ -8,7 +8,7 @@ class Scribe
     transport = Thrift::FramedTransport.new(Thrift::Socket.new(@host, @port))
     transport.open
     
-    @client = ScribeThrift::Client.new(
+    @client = ScribeThrift::SafeClient.new(
       ScribeThrift::Client.new(Thrift::BinaryProtocol.new(transport, false)),
       transport)
   end
