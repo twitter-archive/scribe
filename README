@@ -1,0 +1,36 @@
+
+scribe
+
+A Ruby client for the Scribe distributed log server. 
+
+== License
+
+Copyright 2009 Twitter, Inc. See included LICENSE file.
+
+The public certificate for this gem is here[http://rubyforge.org/frs/download.php/25331/evan_weaver-original-public_cert.pem]. 
+
+== Features
+
+* clean encapsulation of the Thrift API
+* Ruby 1.9 compatibility
+
+The Github source repository is {here}[http://github.com/fauna/scribe/]. Patches and contributions are very welcome.
+
+== Installation
+
+You need Ruby 1.8 or 1.9. If you have those, just run:
+
+  sudo gem install scribe
+  
+== Usage
+  
+Now, start IRb and require the library:
+  
+  require 'scribe'
+  
+== Further reading
+
+== Reporting problems
+
+The Github issue tracker is {here}[http://github.com/fauna/scribe/issues]. If you have problems with Scribe itself, please use the {scribe-users mailing list}[http://sourceforge.net/mailarchive/forum.php?forum_name=scribeserver-users].
+
