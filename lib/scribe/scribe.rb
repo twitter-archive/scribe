@@ -1,0 +1,4 @@
+
+class Scribe
+
+end
