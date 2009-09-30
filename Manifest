@@ -1,0 +1,17 @@
+CHANGELOG
+LICENSE
+Manifest
+README
+Rakefile
+conf/scribe.conf
+lib/scribe.rb
+lib/scribe/safe_client.rb
+lib/scribe/scribe.rb
+test/scribe_test.rb
+test/test_helper.rb
+vendor/gen-rb/facebook_service.rb
+vendor/gen-rb/fb303_constants.rb
+vendor/gen-rb/fb303_types.rb
+vendor/gen-rb/scribe.rb
+vendor/gen-rb/scribe_constants.rb
+vendor/gen-rb/scribe_types.rb
