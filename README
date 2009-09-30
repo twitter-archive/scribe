@@ -1,13 +1,13 @@
 
 scribe
 
-A Ruby client for the Scribe distributed log server. 
+A Ruby client for the Scribe distributed log server.
 
 == License
 
 Copyright 2009 Twitter, Inc. See included LICENSE file.
 
-The public certificate for this gem is here[http://rubyforge.org/frs/download.php/25331/evan_weaver-original-public_cert.pem]. 
+The public certificate for this gem is here[http://rubyforge.org/frs/download.php/25331/evan_weaver-original-public_cert.pem].
 
 == Features
 
@@ -21,14 +21,34 @@ The Github source repository is {here}[http://github.com/fauna/scribe/]. Patches
 You need Ruby 1.8 or 1.9. If you have those, just run:
 
   sudo gem install scribe
-  
+
 == Usage
-  
+
 Now, start IRb and require the library:
-  
+
   require 'scribe'
+
+Connect to a server:
+
+  client = Scribe.new('127.0.0.1')
+
+Log a line:
+
+  client.log("started up")
+
+Log a line with a category:
+
+  client.log("my app started up", "MyApp")
+
+Batch a number of log lines and send them all at once:
+
+  client.batch do
+    client.log("booting")
+    client.log("loading data")
+    client.log("success!")
+  end
   
-== Further reading
+That is all.
 
 == Reporting problems
 
