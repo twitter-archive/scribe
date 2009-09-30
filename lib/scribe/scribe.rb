@@ -18,7 +18,7 @@ class Scribe
     raise ArgumentError, "Category must be a string" unless category.is_a?(String)
     
     entry = ScribeThrift::LogEntry.new(:message => message, :category => category)
-    @batch ? @batch << entry : @client.Log(Array(log_entry))
+    @batch ? @batch << entry : @client.Log(Array(entry))
   end
   
   def batch
