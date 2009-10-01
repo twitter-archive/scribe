@@ -32,4 +32,10 @@ class Scribe
   ensure
     @batch = nil
   end
+  
+  alias :debug :log
+  alias :error :log
+  alias :fatal :log
+  alias :info :log
+  alias :warn :log  
 end
