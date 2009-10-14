@@ -7,13 +7,7 @@ class Scribe
     @port = port
     @category = category
     @add_newlines = add_newlines
-
-    transport = Thrift::FramedTransport.new(Thrift::Socket.new(@host, @port))
-    transport.open
-    
-    @client = ScribeThrift::SafeClient.new(
-      ScribeThrift::Client.new(Thrift::BinaryProtocol.new(transport, false)),
-      transport)
+    @client = ThriftClient.new(ScribeThrift::Client, @host, @port)
   end
 
   # Log a message. Accepts a string and an optional category.

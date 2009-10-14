@@ -1,6 +1,6 @@
 
 require 'rubygems'
-require 'thrift'
+require 'thrift_client'
 
 HERE = File.expand_path(File.dirname(__FILE__))
 
@@ -14,6 +14,5 @@ ScribeThrift.const_set("LogEntry", LogEntry)
 Object.send(:remove_const, "LogEntry")
 
 $LOAD_PATH << "#{HERE}"
-require 'scribe/safe_client'
 require 'scribe/scribe'
 require 'scribe/debug' if ENV['DEBUG']

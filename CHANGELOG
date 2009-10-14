@@ -1,4 +1,6 @@
 
+v0.2. Use thrift_client gem.
+
 v0.1.2. Legacy accessors for log levels. Append newlines by default.
 
 v0.1. First release.

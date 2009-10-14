@@ -8,7 +8,7 @@ begin
     p.project = "fauna"
     p.summary = "A Ruby client for the Scribe distributed log server."
     p.rubygems_version = ">= 0.8"
-    p.dependencies = ['thrift', 'rake']
+    p.dependencies = ['thrift_client', 'rake']
     p.ignore_pattern = /^(vendor\/thrift)/
     p.rdoc_pattern = /^(lib|bin|tasks|ext)|^README|^CHANGELOG|^TODO|^LICENSE|^COPYING$/
     p.url = "http://blog.evanweaver.com/files/doc/fauna/scribe/"
@@ -32,7 +32,7 @@ desc "Restart Scribe"
 task :restart => ["stop", "scribe"] do
 end
 
-# desc "Regenerate thrift bindings for Cassandra" # Dev only
+# desc "Regenerate thrift bindings for Scribe" # Dev only
 task :thrift do
   puts "Generating Thrift bindings"
   # FIXME
