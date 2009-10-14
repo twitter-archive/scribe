@@ -1,6 +1,6 @@
 
 class Scribe
-  # Created a new client instance. Accepts an optional host, port, default 
+  # Created a new client instance. Accepts an optional host and port, default 
   # category, flag to control whether newlines are added to each line, and
   # additional settings to be passed to ThriftClient.
   def initialize(servers = "127.0.0.1:1463", category = "Ruby", add_newlines = true, thrift_client_options = {})
