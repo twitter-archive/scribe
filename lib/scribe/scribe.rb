@@ -2,12 +2,11 @@
 class Scribe
   # Created a new client instance. Accepts an optional host, port, default 
   # category, and flag to control whether newlines are added to each line.
-  def initialize(host = "127.0.0.1", port = 1463, category = "Ruby", add_newlines = true)
-    @host = host
-    @port = port
+  def initialize(servers = "127.0.0.1:1463", category = "Ruby", add_newlines = true)
+    @servers = servers
     @category = category
     @add_newlines = add_newlines
-    @client = ThriftClient.new(ScribeThrift::Client, @host, @port)
+    @client = ThriftClient.new(ScribeThrift::Client, @servers, :randomize_server_list => true)
   end
 
   # Log a message. Accepts a string and an optional category.

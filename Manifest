@@ -6,7 +6,6 @@ Rakefile
 conf/scribe.conf
 lib/scribe.rb
 lib/scribe/debug.rb
-lib/scribe/safe_client.rb
 lib/scribe/scribe.rb
 test/scribe_test.rb
 test/test_helper.rb
