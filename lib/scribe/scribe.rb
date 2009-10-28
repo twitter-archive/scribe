@@ -1,5 +1,7 @@
 
 class Scribe
+  PROTOCOL_OPTIONS = { :protocol_extra_params => [false]  }
+
   # Created a new client instance. Accepts an optional host and port, default 
   # category, flag to control whether newlines are added to each line, and
   # additional settings to be passed to ThriftClient.
@@ -7,7 +9,7 @@ class Scribe
     @servers = servers
     @category = category
     @add_newlines = add_newlines
-    @client = ThriftClient.new(ScribeThrift::Client, @servers, options)
+    @client = ThriftClient.new(ScribeThrift::Client, @servers, options.merge(PROTOCOL_OPTIONS))
   end
 
   # Log a message. Accepts a string and an optional category.
