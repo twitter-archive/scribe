@@ -8,7 +8,7 @@ require 'thrift'
 require 'facebook_service'
 require 'scribe_types'
 
-module Scribe
+module ScribeThrift
   class Client < FacebookService::Client 
     include ::Thrift::Client
 
@@ -49,7 +49,7 @@ module Scribe
 
     ::Thrift::Struct.field_accessor self, :messages
     FIELDS = {
-      MESSAGES => {:type => ::Thrift::Types::LIST, :name => 'messages', :element => {:type => ::Thrift::Types::STRUCT, :class => LogEntry}}
+      MESSAGES => {:type => ::Thrift::Types::LIST, :name => 'messages', :element => {:type => ::Thrift::Types::STRUCT, :class => ScribeThrift::LogEntry}}
     }
 
     def struct_fields; FIELDS; end
@@ -65,13 +65,13 @@ module Scribe
 
     ::Thrift::Struct.field_accessor self, :success
     FIELDS = {
-      SUCCESS => {:type => ::Thrift::Types::I32, :name => 'success', :enum_class => ResultCode}
+      SUCCESS => {:type => ::Thrift::Types::I32, :name => 'success', :enum_class => ScribeThrift::ResultCode}
     }
 
     def struct_fields; FIELDS; end
 
     def validate
-      unless @success.nil? || ResultCode::VALID_VALUES.include?(@success)
+      unless @success.nil? || ScribeThrift::ResultCode::VALID_VALUES.include?(@success)
         raise ::Thrift::ProtocolException.new(::Thrift::ProtocolException::UNKNOWN, 'Invalid value of field success!')
       end
     end

@@ -1,3 +1,4 @@
+v0.2.2 Refactoring to make dynamic class unloading work better.
 
 v0.2.1. Set strict_read to false.
 
