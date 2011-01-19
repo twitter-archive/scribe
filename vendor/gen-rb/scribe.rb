@@ -44,10 +44,9 @@ module ScribeThrift
   # HELPER FUNCTIONS AND STRUCTURES
 
   class Log_args
-    include ::Thrift::Struct
+    include ::Thrift::Struct, ::Thrift::Struct_Union
     MESSAGES = 1
 
-    ::Thrift::Struct.field_accessor self, :messages
     FIELDS = {
       MESSAGES => {:type => ::Thrift::Types::LIST, :name => 'messages', :element => {:type => ::Thrift::Types::STRUCT, :class => ScribeThrift::LogEntry}}
     }
@@ -57,13 +56,13 @@ module ScribeThrift
     def validate
     end
 
+    ::Thrift::Struct.generate_accessors self
   end
 
   class Log_result
-    include ::Thrift::Struct
+    include ::Thrift::Struct, ::Thrift::Struct_Union
     SUCCESS = 0
 
-    ::Thrift::Struct.field_accessor self, :success
     FIELDS = {
       SUCCESS => {:type => ::Thrift::Types::I32, :name => 'success', :enum_class => ScribeThrift::ResultCode}
     }
@@ -76,6 +75,7 @@ module ScribeThrift
       end
     end
 
+    ::Thrift::Struct.generate_accessors self
   end
 
 end
