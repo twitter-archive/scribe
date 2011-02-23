@@ -2,7 +2,7 @@
 begin
   require 'rubygems'
   require 'echoe'
-  
+
   Echoe.new("scribe") do |p|
     p.author = "Evan Weaver"
     p.project = "fauna"
@@ -11,8 +11,6 @@ begin
     p.dependencies = ['thrift_client', 'rake']
     p.ignore_pattern = /^(vendor\/thrift)/
     p.rdoc_pattern = /^(lib|bin|tasks|ext)|^README|^CHANGELOG|^TODO|^LICENSE|^COPYING$/
-    p.url = "http://blog.evanweaver.com/files/doc/fauna/scribe/"
-    p.docs_host = "blog.evanweaver.com:~/www/bax/public/files/doc/"
   end
 rescue LoadError
 end
