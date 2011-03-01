@@ -1,3 +1,5 @@
+v0.2.3 Generated thrift 0.5.0 interface to support new thrift_client 0.6.0
+
 v0.2.2 Refactoring to make dynamic class unloading work better.
 
 v0.2.1. Set strict_read to false.

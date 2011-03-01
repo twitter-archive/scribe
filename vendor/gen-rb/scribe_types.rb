@@ -6,7 +6,6 @@
 
 require 'fb303_types'
 
-
 module ScribeThrift
   module ResultCode
     OK = 0
@@ -16,11 +15,10 @@ module ScribeThrift
   end
 
   class LogEntry
-    include ::Thrift::Struct
+    include ::Thrift::Struct, ::Thrift::Struct_Union
     CATEGORY = 1
     MESSAGE = 2
 
-    ::Thrift::Struct.field_accessor self, :category, :message
     FIELDS = {
       CATEGORY => {:type => ::Thrift::Types::STRING, :name => 'category'},
       MESSAGE => {:type => ::Thrift::Types::STRING, :name => 'message'}
@@ -31,5 +29,6 @@ module ScribeThrift
     def validate
     end
 
+    ::Thrift::Struct.generate_accessors self
   end
 end
