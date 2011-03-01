@@ -8,7 +8,7 @@ begin
     p.project = "fauna"
     p.summary = "A Ruby client for the Scribe distributed log server."
     p.rubygems_version = ">= 0.8"
-    p.dependencies = ['thrift_client', 'rake']
+    p.dependencies = ['thrift_client ~>0.6', 'rake']
     p.ignore_pattern = /^(vendor\/thrift)/
     p.rdoc_pattern = /^(lib|bin|tasks|ext)|^README|^CHANGELOG|^TODO|^LICENSE|^COPYING$/
   end
